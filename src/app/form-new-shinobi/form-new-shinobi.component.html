@@ -1,0 +1,115 @@
+<div class="create-form">
+  <div class="create-form-header">
+    <h3 fxLayoutAlign="center space-between">NEW SHINOBI</h3>
+  </div>
+  <div class="demographic-info" fxLayoutAlign="center space-between">
+    <form
+      [formGroup]="newShinobiFormGroup"
+      fxLayout="column"
+      fxLayoutAlign="center space-between"
+      class="step form"
+    >
+      <label class="step-labelF"
+        >Прізвище<span class="step-required">*</span></label
+      >
+      <mat-form-field>
+        <input
+          matInput
+          class="step-input"
+          type="text"
+          formControlName="lastName"
+          autocomplete="none"
+        />
+      </mat-form-field>
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          newShinobiFormGroup.controls['lastName'].invalid &&
+          newShinobiFormGroup.controls['lastName'].touched
+        "
+      >
+        Не указано им`я
+      </div>
+
+      <label class="step-label">Ім'я<span class="step-required">*</span></label>
+      <mat-form-field>
+        <input
+          matInput
+          class="step-input"
+          type="text"
+          formControlName="firstName"
+          autocomplete="none"
+        />
+      </mat-form-field>
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          newShinobiFormGroup.controls['firstName'].invalid &&
+          newShinobiFormGroup.controls['firstName'].touched
+        "
+      >
+        Не указано им`я
+      </div>
+      <mat-form-field>
+        <mat-label>Select village</mat-label>
+        <mat-select [(value)]="selectedVillage" formControlName="village">
+          <mat-option *ngFor="let village of villages" [value]="village">
+            {{ village }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <label class="step-label sex"
+        >Sex<span class="step-required">*</span></label
+      >
+      <mat-radio-group [(ngModel)]="Sex" formControlName="sex">
+        <mat-radio-button class="mat-radio-button" value="male"
+          >Male</mat-radio-button
+        >
+        <mat-radio-button class="mat-radio-button" value="female"
+          >Female</mat-radio-button
+        >
+      </mat-radio-group>
+
+      <mat-form-field>
+        <mat-label class="textarea">Text area</mat-label>
+        <textarea matInput formControlName="textarea"></textarea>
+      </mat-form-field>
+
+      <div
+        class="btn-group"
+        fxLayout="row"
+        fxLayoutAlign="center space-between"
+      >
+        <button class="btn" mat-button type="submit" (click)="onClear()">
+          Clear
+        </button>
+        <button
+          class="btn"
+          mat-button
+          type="submit"
+          (click)="onView()"
+          [disabled]="newShinobiFormGroup.status === 'INVALID'"
+        >
+          View
+        </button>
+        <button
+          class="btn"
+          mat-button
+          type="submit"
+          (click)="onSave()"
+          [disabled]="newShinobiFormGroup.status === 'INVALID'"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<p fxLayoutAlign="center space-between">
+  Form Status: {{ newShinobiFormGroup.status }}
+</p>
+<div fxLayoutAlign="center space-between" [hidden]="!hiddenObject">
+  <p>{{ newShinobiFormGroup.value | json }}</p>
+</div>

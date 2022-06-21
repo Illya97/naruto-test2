@@ -1,0 +1,37 @@
+<!-- <div class="table-container" fxLayout="row" fxLayoutAlign="space-around  center">
+
+    <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Akatsuki">
+            <table-list-component></table-list-component>
+        </mat-tab>
+        <mat-tab label="All team">Content 2</mat-tab>
+        <mat-tab label="Add new shinobi">
+           
+        </mat-tab>
+    </mat-tab-group>
+
+</div> -->
+
+<nav mat-tab-nav-bar>
+    <a
+      mat-tab-link
+      [routerLinkActive]="['active']"
+      [routerLink]="['./table-module/table-list']"
+      >Table</a
+    >
+    <a
+      mat-tab-link
+      [routerLinkActive]="['active']"
+      [routerLink]="['./form-module/form-new-shinobi']"
+      >Form</a
+    >
+    <a
+    mat-tab-link
+    [routerLinkActive]="['active']"
+    [routerLink]="['./change-module/change-form-shinobi']"
+    >Change form shinobi</a
+  >
+
+
+</nav>
+<router-outlet></router-outlet>

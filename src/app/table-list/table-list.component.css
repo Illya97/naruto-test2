@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+}
+
+.button-container {
+    padding: 5px;
+}
+
+.column-name {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    border: 1px solid gray;
+    padding: 1rem !important;
+}
+
+button {
+    margin: 0 1rem;
+}

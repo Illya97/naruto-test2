@@ -1,0 +1,40 @@
+.step {
+  min-width: 410px;
+  font-family: Innerspace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 0 50px;
+}
+input {
+  width: 300px;
+  font-size: 13px;
+  padding: 6px 0 4px 10px;
+  border: 1px solid #cecece;
+  background: #f6f6f6;
+  border-radius: 8px;
+}
+mat-form-field {
+  line-height: 18px;
+  width: 300px;
+}
+mat-radio-button {
+  padding: 6px 0 4px 10px;
+}
+textarea.mat-input-element {
+  height: 150px;
+  border: 1px solid #cecece;
+  border-radius: 15px;
+}
+mat-label.textarea {
+  font-size: 15px;
+  padding: 10px;
+}
+.create-form {
+  margin-bottom: 50px;
+}
+
+[hidden] {
+  display: none !important;
+}
